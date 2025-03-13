@@ -1,0 +1,14 @@
+---
+# Source: my-app/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: release-name-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: release-name
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

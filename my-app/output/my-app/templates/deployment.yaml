@@ -1,0 +1,21 @@
+---
+# Source: my-app/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: release-name-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: release-name
+  template:
+    metadata:
+      labels:
+        app: release-name
+    spec:
+      containers:
+      - name: my-app
+        image: "nginx:latest"
+        ports:
+        - containerPort: 80
